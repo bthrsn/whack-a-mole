@@ -1,0 +1,38 @@
+{
+  "name": "whack-a-mole",
+  "version": "1.0.0",
+  "description": "webgame",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bthrsn/whack-a-mole.git"
+  },
+  "keywords": [
+    "javascript",
+    "game"
+  ],
+  "author": "mikhail.lhts@gmail.com",
+  "license": "ISC",
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ],
+  "bugs": {
+    "url": "https://github.com/bthrsn/whack-a-mole/issues"
+  },
+  "homepage": "https://github.com/bthrsn/whack-a-mole#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "core-js": "^3.8.3",
+    "gulp": "^4.0.2",
+    "gulp-gh-pages": "^0.5.4",
+    "webpack": "^5.20.0",
+    "webpack-stream": "^6.1.2"
+  }
+}
