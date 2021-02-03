@@ -1,12 +1,16 @@
 "use strict";
 
-const gulp = require("gulp"),
-      webpack = require("webpack-stream"),
-      browsersync = require("browser-sync"),
-      ghPages = require('gulp-gh-pages');
+import gulp from 'gulp';
+import webpack from 'webpack-stream';
+import browsersync from 'browser-sync';
+import ghPages from 'gulp-gh-pages';
 
-// const dist = "./dist/";
-const dist = "E:\\OpenServer\\domains\\art";
+// const gulp = require("gulp"),
+//       webpack = require("webpack-stream"),
+//       browsersync = require("browser-sync"),
+//       ghPages = require('gulp-gh-pages');
+
+const dist = "./dist/";
 
 gulp.task("copy-html", () => {
     return gulp.src("./src/index.html")
@@ -55,7 +59,7 @@ gulp.task("copy-assets", () => {
 gulp.task("watch", () => {
     browsersync.init({
 		server: "./dist/",
-		port: 4000,
+		port: 3000,
 		notify: true
     });
     
