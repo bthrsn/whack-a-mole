@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>Whack-a-mole</title>
-  <link rel=stylesheet href=assets/css/main.css>
-  <link rel=stylesheet href=assets/css/reset.css>
+  <link rel=stylesheet href='./assets/css/main.css'>
+  <link rel=stylesheet href='./assets/css/reset.css'>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png"> -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <!-- <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"> -->
 </head>
 <body>
 <!-- Header with score and time left blocks -->
   <header>
     <h1>Whack-a-mole!</h1>
-    <div class="score">10</div>
-    <div class="timer">10</div>
+    <div class='score'>10</div>
+    <div class='timer'>10</div>
   </header>
+  
+  <!-- Start modal -->
+  <!-- <div class='modal modal-start'>
+    <span class='rules'>Score points by whacking each mole as it appears from its hole for a limited time</span>
+    <button class='button button-start'>start</button>
+  </div> -->
+  <!-- 'Play again' modal -->
+  <!-- <div class='modal modal-start'>
+    <span class='score'>Time is over</span>
+    <span class='score'>Your score: 10</span>
+    <button class='button button-restart'>play again</button>
+  </div> -->
+  
 <!-- Gameboard -->
-  <div class="gameboard">
-  <!-- Inner HTML forms dynamically in main.js and depends on number of holes-->
+  <div class='gameboard'>
+<!-- Inner HTML forms dynamically in main.js and depends on number of holes-->
   </div>
-  <!-- Scripts -->
-  <script src="index.js"></script>
+  
+<!-- Scripts -->
+  <script src='index.js'></script>
 </body>
 </html>
