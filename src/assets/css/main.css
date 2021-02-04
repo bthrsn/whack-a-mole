@@ -52,7 +52,7 @@ h1 {
 
 .hole:after {
   display: block;  
-  background: url('../images/dirt.png') center no-repeat;
+  background: url('../images/hole.png') center no-repeat;
   background-size: contain;
   content: '';
   width: 100%;
