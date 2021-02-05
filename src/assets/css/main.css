@@ -15,10 +15,7 @@ html {
   font-size: 10px;
 }
 
-
 body {
-  padding: 0;
-  margin:0; 
   background: linear-gradient(to left, #7dd437, #a3e926); 
   font-family: 'HelloWhackAMole', cursive;
 }
@@ -27,22 +24,64 @@ header {
   text-align: center;
   font-size: 5rem;
   line-height:1;
-  margin-bottom: 0;
 }
 
 h1 {
   font-size: 10rem;
 }
 
-.gameboard {
-  width: 800px;
-  height: 800px;
+.modal {
+  width: 80%;
+  min-width: 100px;
+  max-width: 400px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center; 
   margin: 0 auto;
-  padding-top: 150px;
+}
+
+.rules {
+  display: block;
+  font-size: 2.5rem;
+}
+
+.button-start {
+  display: block;
+  width: 50%;
+  min-width: 50px;
+  max-width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  border-radius: 30px;
+  outline: none;
+}
+
+.gameboard {
+  width: 70%;
+  min-width: 320px;
+  max-width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 100px;
   cursor: pointer;
 }
+
+/* .hole {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  display: block;  
+  width: 30%;
+  height: 170px;
+  background: url('../images/hole.png') center no-repeat;
+  background-size: contain;
+} */
 
 .hole {
   flex: 1 0 33.33%;
@@ -51,24 +90,25 @@ h1 {
 }
 
 .hole:after {
+  position: absolute;
+  bottom: -30px;
+  z-index: 2;
   display: block;  
   background: url('../images/hole.png') center no-repeat;
   background-size: contain;
   content: '';
   width: 100%;
-  height: 70px;
-  position: absolute;
-  z-index: 2;
+  height: 90px;
 }
 
 .mole {
-  background:url('mole.svg') bottom center no-repeat;
-  background-size: 60%;
   position: absolute;
   top: 100%;
   width: 100%;
   height: 100%;
-  transition:all 0.4s;
+  background:url('../images/mole2.png') bottom center no-repeat;
+  background-size: 50%;
+  transition: all .4s;
 }
 
 .hole.up .mole {
