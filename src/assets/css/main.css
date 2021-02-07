@@ -13,25 +13,30 @@
 
 html {
   box-sizing: border-box;
-  font-size: 10px;
 }
 
 body {
   background: linear-gradient(to left, #7dd437, #a3e926); 
   font-family: 'HelloWhackAMole', cursive; 
+  font-size: 2rem;
 }
 
 header {
   text-align: center;
-  font-size: 5rem;
-  line-height:1;
+  font-size: 3rem;
+  /* line-height: 1; */
 }
 
 h1 {
-  font-size: 10rem;
+  font-size: 8rem;
 }
 
 .modal {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow: hidden; */
   width: 80%;
   min-width: 100px;
   max-width: 400px;
@@ -39,22 +44,23 @@ h1 {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center; 
-  margin: 0 auto;
+  margin: 100px auto;
 }
 
 .rules {
   display: block;
-  font-size: 2.5rem;
+  margin: 0 auto;
+  /* font-size: 2.5rem; */
 }
 
-.button-start {
+.button {
   display: block;
   width: 60%;
   min-width: 50px;
   max-width: 200px;
   height: 50px;
-  margin: 15px auto;
-  font-size: 4rem;
+  margin: 20px auto;
+  font-size: 2rem;
   font-family: 'HelloWhackAMole', cursive; 
   border-radius: 30px;
   outline: none;
@@ -133,15 +139,12 @@ h1 {
 }
 
 .mallet {
+display: none;
   position: absolute;
   height: 125px;
   z-index: 3;
   transform: translate(-10px, -40px);
   pointer-events: none;
-}
-
-.invisible {
-  display: none;
 }
 
 @keyframes whack {

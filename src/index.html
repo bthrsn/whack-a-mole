@@ -19,12 +19,12 @@
     <h1>Whack-a-mole!</h1>
     <div>
       Your score
-        <span class='score'>0</span>
+        <span class='score'></span>
       points
     </div>
     <div>
       Time remaining
-        <span class='timer'>10</span>
+        <span class='timer'></span>
       seconds
     </div>
     
@@ -32,16 +32,19 @@
   
   <!-- Start modal -->
   <div class='modal modal-start'>
-    <span class='rules'>Score points by whacking each mole as it appears from its hole for a limited time</span>
+    <span class='rules'>
+      Score points by whacking each mole on the head 
+      as it appears from its hole for a limited time
+    </span>
     <button class='button button-start'>start</button>
   </div>
   
   <!-- 'Play again' modal -->
-  <!-- <div class='modal modal-start'>
+  <div class='modal modal-restart'>
     <span class='score'>Time is over</span>
     <span class='score'>Your score: 10</span>
     <button class='button button-restart'>play again</button>
-  </div> -->
+  </div>
   
 <!-- Gameboard -->
   <div class='gameboard'>
@@ -49,7 +52,7 @@
   </div>
 
 <!-- mallet  -->
-  <img class="mallet invisible" src='./assets/images/mallet.png' />
+  <img class="mallet" src='./assets/images/mallet.png' />
 <!-- Scripts -->
   <script src='index.js'></script>
 </body>
