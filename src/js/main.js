@@ -1,128 +1,123 @@
+import SETTINGS from './modules/settings';
 import createGameboard from './modules/createGameboard';
+import createMallet from './modules/createMallet';
+import {audio, whackSound} from './modules/addAudio';
 import getRandomItem from './services/getRandomItem';
 import startCountdown from './services/startCountdown';
 
 window.addEventListener('DOMContentLoaded', () => {
   //Global variables
   const millisecondsInSecond = 1000;
-  // Объект для статуса игры, подсчета очков и времени и его деструктуризация
-  let SETTINGS = {
-    start: false,
-    points: 0,
-    numberOfHoles: 9,
-    peepTime: 1,
-    wholeTime: 10 
-  }
-  let {start, points, numberOfHoles, peepTime, wholeTime} = SETTINGS;
   
-  // Создаем игровое поле
+  // Destructuring settings
+  let {start, points, pointsPerMole, numberOfHoles, wholeTime, peepTime} = SETTINGS;
+  
+  // Create our gameboard
   createGameboard('.gameboard', numberOfHoles, 'hole', 'mole');
   
-  // Получаем остальные элементы со страницы
+  // Get all necessary elements from the page;
   const body = document.querySelector('body'),
         modalStart = document.querySelector('.modal-start'),
-        modalPlayAgain = document.querySelector('.modal-restart'),
+        infoBlock = document.querySelector('.info'),
         scoreBlock = document.querySelector('.score'),
         timerBlock = document.querySelector('.timer'),
         gameboard = document.querySelector('.gameboard'),
         holes = document.querySelectorAll('.hole'),
         moles = document.querySelectorAll('.mole'),
         startButton = document.querySelector('.button-start'),
-        playAgainButton = document.querySelector('.button-restart'),        
         mallet = document.querySelector('.mallet');
-       
-  // показываем модальное окно, курсор и скрываем игровое поле
+        
+  // Add audios
+  gameboard.append(audio);
+     
+  // Necessary functions 
+  // Show modal and hide gameboard
   const hideGameboard = () => {
     gameboard.style.display = 'none';
     modalStart.style.display = 'flex';
   }
-  // To play one more game
-  const playAgain = () => {
+  
+  // Show results and play again
+  const showResults = () => {
     start = false;
     gameboard.style.display = 'none';
     body.style.cursor = 'default';
     mallet.style.display = 'none';
-    modalPlayAgain.style.display = 'flex';
+    modalStart.style.display = 'flex';
+    infoBlock.textContent = `Time is over. Your score: ${points} points`;
+    startButton.textContent = 'Play again';
+    // Music stops
+    audio.pause();
   }
   
-  // Скрываем игровое поле на начальном экране
-  hideGameboard();
-  // Set timer
-  timerBlock.textContent = wholeTime.toString();
-  // Set scoreboard
-  scoreBlock.textContent = points.toString();
-  // Hide modal Play again
-  modalPlayAgain.style.display = 'none';
-       
-  // // Получаем рандомную hole
-  // const randomHole = (holes, numberOfHoles) => {
-  //   const index = Math.floor(Math.random() * numberOfHoles),
-  //         hole = holes[index];
-  //   return hole;
-  // }
-  
-  // Добавляем класс к рандомной hole
-  // holes[Math.floor(Math.random() * numberOfHoles)].classList.add('up);
-  
-  // Mole peeps from the hole
-  const molePopsUp = (time) => {
+  // For moles to start peeping from their holes
+  const moveMoles = (time) => {
     const hole = getRandomItem(holes, numberOfHoles);
     hole.classList.add('up');
     
     setTimeout(() => {
       hole.classList.remove('up');
       if (start) {
-        molePopsUp(time)
+        moveMoles(time)
       };
     }, time)
   }
-
-  // Старт игры
+  
+  // Start the game
   const startGame = () => {
-    // // Set timer
-    // timerBlock.textContent = wholeTime.toString();
+    // Change state of the game
     start = true;
     // Set scoreboard
     points = 0;
-     
+    scoreBlock.textContent = points.toString();
+    // // Set timer
+    // wholeTime = 4;
+    // timerBlock.textContent = wholeTime.toString();
+    
+    // Show gameboard and hide starting modal and cursor
     gameboard.style.display = 'flex';
     modalStart.style.display = 'none';
     body.style.cursor = 'none';
     
-    molePopsUp(peepTime * millisecondsInSecond);
+    // Music starts playing
+    audio.play();
+    // Moles start to peep
+    moveMoles(peepTime * millisecondsInSecond);
     
-    // Превращение курсора в молоток
-    mallet.style.display = 'block';
-    window.addEventListener('mousemove', (e) => {
-      mallet.style.top = e.pageY + 'px';
-      mallet.style.left = e.pageX + 'px';
-    })
-    // Анимация молотка при ударе
-    window.addEventListener('click', () => {
-      mallet.style.animation = 'whack .1s ease';
-      // После клика - убираем анимацию и потом вновь добавляем выше
-      setTimeout(() => {
-        mallet.style.removeProperty('animation');
-      }, 100);
-      
-      // End of the game
-      setTimeout(() => playAgain(), wholeTime * millisecondsInSecond);
-    });
+    // Cursor change to mallet
+    createMallet(mallet, 'whack .1s ease');
     
     // Start timer
     startCountdown(wholeTime, timerBlock);
-  }
+
+    // End of the game
+    // Add 1 to our timer to stop it on 0 second, not on 1 second
+    setTimeout(() => showResults(), (wholeTime + 1) * millisecondsInSecond);
+    // if (wholeTime === 0) {
+    //   showResults();
+    // }
+  }  
   
-  // Удар крота
+  // For moles to react on whacking and score points for it
   const whackingTheMole = (e) => {
-    points++;
-    e.target.parentNode.classList.remove('up');
+    // Earn points and display them
+    points += pointsPerMole;
     scoreBlock.textContent = points.toString();
-    console.log(e.target);
+
+    // Mole goes in the whole as soon as we hit it
+    e.target.parentNode.classList.remove('up');
+    whackSound.play();
   }
   
+  // Hide gameboard on the starting screen
+  hideGameboard();
+  // Set timer
+  timerBlock.textContent = wholeTime.toString();
+  // Set scoreboard
+  scoreBlock.textContent = points.toString();
+  
+  // Add event listeners to Start button and each mole
   startButton.addEventListener('click', () => startGame());
-  playAgainButton.addEventListener('click', () => startGame());
   moles.forEach(mole => mole.addEventListener('click', (e) => whackingTheMole(e)));
 
-  })
+});

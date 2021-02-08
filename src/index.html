@@ -6,12 +6,12 @@
   <title>Whack-a-mole</title>
   <link rel=stylesheet href='./assets/css/main.css'>
   <link rel=stylesheet href='./assets/css/reset.css'>
-  <!-- <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png"> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-  <!-- <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff"> -->
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 <!-- Header with score and time left blocks -->
@@ -32,27 +32,26 @@
   
   <!-- Start modal -->
   <div class='modal modal-start'>
-    <span class='rules'>
-      Score points by whacking each mole on the head 
-      as it appears from its hole for a limited time
+    <div class="modal-wrapper">
+    <span class='info'>
+      Score points by whacking each mole directlty on its head 
+      as it appears from the hole for a limited time
     </span>
-    <button class='button button-start'>start</button>
+    <div class="modal-inner-wrapper">
+      <img src="./assets/images/mole.png" alt="mole" class="image-mole" />
+      <button class='button button-start'>start</button>
+    </div>
+  </div>
   </div>
   
-  <!-- 'Play again' modal -->
-  <div class='modal modal-restart'>
-    <span class='score'>Time is over</span>
-    <span class='score'>Your score: 10</span>
-    <button class='button button-restart'>play again</button>
-  </div>
-  
+<!-- Mallet  -->
+<img class="mallet" src='./assets/images/mallet.png' />
+
 <!-- Gameboard -->
   <div class='gameboard'>
 <!-- Inner HTML forms dynamically in main.js and depends on number of holes-->
   </div>
 
-<!-- mallet  -->
-  <img class="mallet" src='./assets/images/mallet.png' />
 <!-- Scripts -->
   <script src='index.js'></script>
 </body>
