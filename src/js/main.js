@@ -99,7 +99,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }  
   
   // For moles to react on whacking and score points for it
-  const whackingTheMole = (e) => {
+  const hitTheMole = (e) => {
     // Earn points and display them
     points += pointsPerMole;
     scoreBlock.textContent = points.toString();
@@ -118,6 +118,6 @@ window.addEventListener('DOMContentLoaded', () => {
   
   // Add event listeners to Start button and each mole
   startButton.addEventListener('click', () => startGame());
-  moles.forEach(mole => mole.addEventListener('click', (e) => whackingTheMole(e)));
+  moles.forEach(mole => mole.addEventListener('click', (e) => hitTheMole(e)));
 
 });
