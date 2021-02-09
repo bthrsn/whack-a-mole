@@ -99,7 +99,7 @@ gulp.task("build-prod-js", () => {
 });
 
 gulp.task('deploy-gh-pages', function() {
-  return gulp.src(dist)
+  return gulp.src('./dist/**')
     .pipe(ghPages());
 });
 
