@@ -1,9 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&family=Roboto&display=swap'); */
-
 @font-face {
 	font-family: 'HelloWhackAMole';
 	src: url('../../assets/fonts/HelloWhackAMole.ttf') format('truetype');
-	/* src: url('//2ttf.com/webfont/LcC336IlHqU/webfont.ttf') format('truetype'); */
 }
 
 *, *:before, *:after {
@@ -26,11 +23,9 @@ body {
 header {
   text-align: center;
   font-size: 3rem;
-  /* line-height: 1; */
 }
 h1 {
   font-size: 8rem;
-  /* color: #FF8C00; */
 }
 
 
@@ -39,11 +34,8 @@ h1 {
 .modal-wrapper {
   margin: 10px;
   padding: 25px;
-  /* background-color: #FFFF00; */
   border: 1px solid #000;
-  /* background: url('../images/mole2.png') left bottom no-repeat #FFFF00; */
   background-color: #FFFF00;
-  /* background-size: 25%; */
   border-radius: 10px;
 }
 
@@ -51,7 +43,6 @@ h1 {
   width: 80%;
   min-width: 300px;
   max-width: 500px;
-  /* height: 300px; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -68,7 +59,6 @@ h1 {
 .info {
   display: block;
   margin-left: 0 auto;
-  /* font-size: 2.5rem; */
 }
 
 .modal-inner-wrapper {
@@ -91,9 +81,6 @@ h1 {
   width: 60%;
   min-width: 50px;
   max-width: 200px;
-  /* height: 80px; */
-  /* margin-top: 20px;
-  margin-left: 150px; */
   margin: 20px auto;
   padding: 5px;
   font-size: 3rem;
@@ -113,18 +100,6 @@ h1 {
 
 /* Gameboard */
 
-/* .gameboard {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 80px;
-  justify-content: center;
-  width: 50%;
-  height: 500px;
-  margin: 0 auto;
-  padding-top: 100px;
-  cursor: url('../images/mallet.png'), pointer;
-} */
-
 .gameboard {
   width: 50%;
   min-width: 320px;
@@ -136,19 +111,7 @@ h1 {
   justify-content: space-between;
   margin: 0 auto;
   padding-top: 100px;
-  /* cursor: url('../images/mallet.png'), pointer; */
 }
-
-/* .hole {
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-  display: block;  
-  width: 100%;
-  height: 100%;
-  background: url('../images/hole.png') center no-repeat;
-  background-size: contain;
-} */
 
 .hole {
   flex: 1 0 33.33%;
@@ -191,7 +154,7 @@ display: none;
   position: absolute;
   height: 125px;
   z-index: 3;
-  transform: translate(-10px, -30px);
+  transform: translate(-15px, -70px);
   pointer-events: none;
 }
 
