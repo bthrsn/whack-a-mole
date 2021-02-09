@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
         
   // Add audios
   gameboard.append(audio);
-     
+    
   // Necessary functions 
   // Show modal and hide gameboard
   const hideGameboard = () => {
@@ -70,9 +70,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // Set scoreboard
     points = 0;
     scoreBlock.textContent = points.toString();
-    // // Set timer
-    // wholeTime = 4;
-    // timerBlock.textContent = wholeTime.toString();
     
     // Show gameboard and hide starting modal and cursor
     gameboard.style.display = 'flex';
@@ -93,9 +90,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // End of the game
     // Add 1 to our timer to stop it on 0 second, not on 1 second
     setTimeout(() => showResults(), (wholeTime + 1) * millisecondsInSecond);
-    // if (wholeTime === 0) {
-    //   showResults();
-    // }
   }  
   
   // For moles to react on whacking and score points for it

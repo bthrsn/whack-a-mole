@@ -4,8 +4,6 @@ const startCountdown = (duration, display) => {
   let cowntdown;
   // Clear all timers
   clearInterval(cowntdown);
-  // // Call display 2 times to start countdown immidiately
-  // display.textContent = duration;
   
   // Refresh cowntdown every second
   cowntdown = setInterval(() => {

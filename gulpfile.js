@@ -5,11 +5,6 @@ import webpack from 'webpack-stream';
 import browsersync from 'browser-sync';
 import ghPages from 'gulp-gh-pages';
 
-// const gulp = require("gulp"),
-//       webpack = require("webpack-stream"),
-//       browsersync = require("browser-sync"),
-//       ghPages = require('gulp-gh-pages');
-
 const dist = "./dist/";
 
 gulp.task("copy-html", () => {
