@@ -4,7 +4,7 @@ Link to the project [https://bthrsn.github.io/whack-a-mole/](https://bthrsn.gith
 
 * Game starts with “Start” button on the very first screen.
 
-* Gameplay: earn points by hitting a mole as it appears from the hole. If you do it right you hear specific sound and see your score increases.
+* Gameplay: earn points by hitting a mole on its head as it appears from the hole. If you do it right you hear specific sound and see your score increases.
 
 * Game end screen appears when time is out and shows total score and “Play again” button. 
 
