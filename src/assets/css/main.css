@@ -154,7 +154,7 @@ display: none;
   position: absolute;
   height: 125px;
   z-index: 3;
-  transform: translate(-15px, -70px);
+  transform: translate(-5px, -50px);
   pointer-events: none;
 }
 
