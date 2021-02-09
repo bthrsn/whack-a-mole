@@ -8,4 +8,4 @@ Link to the project [https://bthrsn.github.io/whack-a-mole/](https://bthrsn.gith
 
 * Game end screen appears when time is out and shows total score and “Play again” button. 
 
-* Score per whacked mole, time limit, mole's time of showing up, number of holes on the gameboard you can change in object SETTINGS in [src/js/modules/settings.js](src/js/modules/settings.js).
+* Score per whacked mole, time limit, mole's time of showing up, number of holes on the gameboard you can change in object SETTINGS in [src/js/services/settings.js](src/js/services/settings.js).

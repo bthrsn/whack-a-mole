@@ -1,9 +1,9 @@
-import SETTINGS from './modules/settings';
+import SETTINGS from './services/settings';
 import createGameboard from './modules/createGameboard';
 import createMallet from './modules/createMallet';
 import {audio, whackSound} from './modules/addAudio';
 import getRandomItem from './services/getRandomItem';
-import startCountdown from './services/startCountdown';
+import startCountdown from './modules/startCountdown';
 
 window.addEventListener('DOMContentLoaded', () => {
   //Global variables
