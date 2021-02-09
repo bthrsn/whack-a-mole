@@ -1,5 +1,7 @@
 ## Test project: Whack-a-mole game 
 
+Link to the project [https://bthrsn.github.io/whack-a-mole/](https://bthrsn.github.io/whack-a-mole/)
+
 * Game starts with “Start” button on the very first screen.
 
 * Gameplay: earn points by hitting a mole as it appears from the hole. If you do it right you hear specific sound and see your score increases.
